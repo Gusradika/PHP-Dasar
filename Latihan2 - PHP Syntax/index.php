@@ -109,7 +109,7 @@ $z = $x * $y;
             <h1><?php echo '$printKutip' ?></h1>
             <p>({?php echo '$printKutip' ?})</p>
         </li>
-        <h1 style="font-size: 100px;"> Operator </h1><br>
+        <h1 style="font-size: 100px;" class="op1"> Operator </h1><br>
         <li>
             <h1>Operasi aritmatika</h1>
             <p> x = 10<br> y = 20 </p>
@@ -196,6 +196,7 @@ $z = $x * $y;
         </li>
     </ol>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
