@@ -27,11 +27,18 @@
 */
 
 // Varables dan Tipe Data
-//Variabel
+//Variabel ditulis dengan $
 $nama = "Aditya kesuma"; // Jangan Lupa Echo untuk output. tidak bisa langsung
+$printKutip = "ini adalah kutip 2";
+
+// Operator
+
+$x = 10;
+$y = 20;
+
+$z = $x * $y;
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -54,6 +61,11 @@ $nama = "Aditya kesuma"; // Jangan Lupa Echo untuk output. tidak bisa langsung
 
     span {
         background-color: yellow;
+    }
+
+    .class1 {
+        font-weight: bold;
+        font-size: 25px;
     }
     </style>
 </head>
@@ -87,6 +99,99 @@ $nama = "Aditya kesuma"; // Jangan Lupa Echo untuk output. tidak bisa langsung
                 <br> ingat dalam <span>deklarasi variabel harus disertai $ dan disimpan pada<br> Tag
                     PHP)</span>
 
+            </p>
+        </li>
+        <li>
+            <!-- Perbedaan kutip 1 dan kutip 2  -->
+            <h1><?php echo "$printKutip" ?></h1>
+            <p>({?php echo "$printKutip" ?>)</p>
+
+            <h1><?php echo '$printKutip' ?></h1>
+            <p>({?php echo '$printKutip' ?})</p>
+        </li>
+        <h1 style="font-size: 100px;"> Operator </h1><br>
+        <li>
+            <h1>Operasi aritmatika</h1>
+            <p> x = 10<br> y = 20 </p>
+            <p>Declared Method : <?php echo " hasil dari $x * $y = $z" ?></p>
+            <p> Inline Method (Harus membuat 2 Sintax)
+                <?php
+                echo "Hasil dari $x * $y =";
+                echo $x * $y
+                ?></p>
+        </li>
+        <li>
+            <h1>Penggabungan / Concat <span>( . )</span> menggunakan . <span>(Bedanya biasanya memakai + (di java, js,
+                    dll)</span></h1>
+            <p>
+                <?php
+                $first_name = "Aditya";
+                $last_name = "Kesuma";
+                echo $first_name . " " .  $last_name;
+                ?>
+            </p>
+            <p class="class1">
+                <?php echo "Halo, Selamat datang " . $nama ?>
+            </p>
+        </li>
+        <li>
+            <h1>Operator Assignment</h1>
+            <p>
+                <?php
+                $a = 1;
+                $a += 2;
+                echo "a = " . $a;
+                ?>
+                <!-- Hasil output adalah 3 (karena 1 += 2) -->
+            </p>
+            <p>
+                <?php
+                $b = "Aditya";
+                $b .= " ";
+                $b .= "Kesuma";
+                //disini saya menggunakan Concat untuk menambahkan String (pada Java Kita dapat menggunakan operator += jadi bedanya concat sendiri dan += sendiri );
+                echo "$b";
+                ?>
+            </p>
+        </li>
+        <li>
+            <h1>Operator Perbandingan </h1>
+            <p>
+                <?php
+                var_dump(1 < 5); // ini akan menghasilkan nilai boolean
+                echo "<br>";
+                var_dump(6 < 5); // ini akan menghasilkan nilai boolean
+
+                ?>
+            </p>
+        </li>
+        <li>
+            <h1>Operator Identitas</h1>
+            <p><?php
+                var_dump(1 === "1"); // output -> bool(false)
+                ?>
+            </p>
+        </li>
+        <li>
+            <h1>Operator Logika</h1>
+            <p>
+                <?php
+                $x = 3;
+                $y = 4;
+                echo "<b>Operator && (AND)</b> <br>";
+                var_dump($x > $y && 1 == 1); // apakah x = 3 > y = 4 && 1 == 1; // Output False
+                echo "<br>";
+                var_dump($x < $y && 1 == 1); // apakah x = 3 <br y = 4 && 1 == 1 // Output True 
+                echo "<br><br><b>Operator || (OR) </b><br>";
+                var_dump($x > $y || 1 == 1); // apakah x = 3 > y = 4 && 1 == 1; // Output False
+                // OR = (False & True = True) 
+                echo "<br>";
+                var_dump($x < $y || 1 == 2); // apakah x = 3 < y = 4 && 1 == 1 // Output True 
+                //  OR = (TRUE & FALSE = True)
+
+                echo "Operator ! (NOT)";
+
+                ?>
             </p>
         </li>
     </ol>
