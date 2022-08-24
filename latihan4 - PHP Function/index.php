@@ -57,6 +57,54 @@ echo date("l, d-m-Y", mktime(0, 0, 0, 9, 15, 2000));
 // strtotime()
 // Tanggal to detik
 echo ("<br>");
-echo strtotime("15 sep 2000");
+echo strtotime("15 sep 2000");  // tanggal to detik
 echo "<br>";
-echo mktime(0, 0, 0, 9, 15, 2000);
+echo mktime(0, 0, 0, 9, 15, 2000); // custom to detik
+
+// ##########
+// ##########
+// ##########
+// STRINGS
+
+// strlen() // Length to string
+// strcmp()
+// explode // memecah string. untuk memecah dan mengambil eksteni / file
+//htmlspecialchars()
+
+
+// UTILITY
+// var_dump()
+// isset() // mengetahui nilai variable pernah di bikin atau belum jika ya maka output Boolean
+// empty() // sama tetapi vice versa
+// die() // menghentikan program dibawahnya (sama seperti Break)
+// sleep() // memberhentikan Selama waktu yang ditentukan.
+
+?>
+
+<?php
+$nama = "Aditya Kesuma";
+
+function salam($waktu, $nama)
+{
+
+    return "Selamat $waktu, $nama!";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Function Latihan</title>
+</head>
+
+<body>
+    <h1>Selamat
+        <?php echo salam("Pagi", "Aditya Kesuma") ?>
+    </h1>
+
+</body>
+
+</html>
