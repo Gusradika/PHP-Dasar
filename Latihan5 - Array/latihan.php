@@ -2,6 +2,7 @@
 $nama = ["Aditya Kesuma", "Aditya Ngurah", "Ngurah Kesuma", "Juan Aditya"];
 $nim = ["21410100039", "2141000053", "2141414144", "2141419999999"];
 $Semester = ["Sem 3", "Sem 4", "Sem 5", "Sem 6"];
+$array2d = [["Samson gunung", "2000", "Sem 4"], ["Ferdy S", "2031", "Sem 5"]];
 ?>
 
 <!DOCTYPE html>
@@ -13,46 +14,46 @@ $Semester = ["Sem 3", "Sem 4", "Sem 5", "Sem 6"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latihan Menampilkan data sesuai Array</title>
     <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
 
-    .container h1 {
-        text-align: center;
-        text-transform: capitalize;
+        .container h1 {
+            text-align: center;
+            text-transform: capitalize;
 
-    }
+        }
 
-    .container {
-        width: 1400px;
-        margin: 0 auto;
-        border: 1px solid red;
-    }
+        .container {
+            width: 1400px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
 
-    div.container h2 {
-        margin-bottom: -30px;
-    }
+        div.container h2 {
+            margin-bottom: -30px;
+        }
 
-    .box-mhs {
-        width: 200px;
-        height: 200px;
-        border: 1px red;
-        margin: 20px;
-        padding: 15px;
-        border-radius: 30px;
-        color: white;
-        background-color: yellowgreen;
-        opacity: "0.5";
-    }
+        .box-mhs {
+            width: 200px;
+            height: 200px;
+            border: 1px red;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 30px;
+            color: white;
+            background-color: yellowgreen;
+            opacity: "0.5";
+        }
 
-    .box-flex {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+        .box-flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -61,28 +62,38 @@ $Semester = ["Sem 3", "Sem 4", "Sem 5", "Sem 6"];
         <h1>Menampilkan data sesuai Array</h1>
         <div class="box-flex">
             <?php for ($i = 0; $i < count($nama); $i++) : ?>
-            <div class="box-mhs">
-                <?php echo "<h2>Mahasiswa ke - $i</h2><br><p>Nama : $nama[$i]<br> Nim : $nim[$i]<br>Semester : $Semester[$i]<hr><br>" ?>
-            </div>
+                <div class="box-mhs">
+                    <?php echo "<h2>Mahasiswa ke - $i</h2><br><p>Nama : $nama[$i]<br> Nim : $nim[$i]<br>Semester : $Semester[$i]<hr><br>" ?>
+                </div>
             <?php endfor; ?>
+        </div>
+        <div class="box-flex2">
+            <?php foreach ($array2d as $a) : ?>
+                <?php echo "<h3>Mahasiswa ke - $i</h3>" ?>
+                <br>
+                <?= $a[0] ?>
+                <?= $a[1] ?>
+                <?= $a[2] ?>
+                <hr><br>
+            <?php endforeach; ?>
         </div>
 
 
     </div>
     <script>
-    const container = document.getElementsByClassName("container")[0];
-    const box_mhs = container.querySelectorAll(".box-mhs");
+        const container = document.getElementsByClassName("container")[0];
+        const box_mhs = container.querySelectorAll(".box-mhs");
 
-    box_mhs.forEach(function(x) {
-        x.addEventListener("mouseenter", function(y) {
-            y.target.style.transform = "scale(1.2)";
-            y.target.style.opacity = "1";
+        box_mhs.forEach(function(x) {
+            x.addEventListener("mouseenter", function(y) {
+                y.target.style.transform = "scale(1.2)";
+                y.target.style.opacity = "1";
+            });
+            x.addEventListener("mouseleave", function(y) {
+                y.target.style.transform = "scale(1)";
+                y.target.style.opacity = "0.2";
+            });
         });
-        x.addEventListener("mouseleave", function(y) {
-            y.target.style.transform = "scale(1)";
-            y.target.style.opacity = "0.2";
-        });
-    });
     </script>
 </body>
 
