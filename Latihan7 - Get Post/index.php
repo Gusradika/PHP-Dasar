@@ -1,4 +1,11 @@
 <?php
+/* 
+SECARA UMUM GET & POST ADALAH
+
+GET = DATA ARRAY YANG DIAMBIL DARI LINK .PHP?<nama array> 
+POST = DATA ARRAY YANG DIAMBIL DARI FORM -> SUBMIT (name = class)
+*/
+
 
 //Global Variabel
 
