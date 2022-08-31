@@ -7,7 +7,6 @@ $karyawan = query("SELECT * FROM karyawan");
 foreach ($karyawan as $x) {
     var_dump($x["nama"]);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +21,10 @@ foreach ($karyawan as $x) {
 
 <body>
 
-    <?php if (isset($false) == 1) : ?>
+    <?php if (isset($_GET["false"])) : ?>
     <h1>DATA TIDAK DITEMUKAN</h1>
+    <?php else : ?>
+    <h1>welcome</h1>
     <?php endif; ?>
 
     <table cellspacing="0" cellpadding="20" border="1">

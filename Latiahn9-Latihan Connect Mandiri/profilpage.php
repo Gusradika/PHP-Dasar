@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET["no"]) || !isset($_GET["nama"]) || !isset($_GET["no"]) || !isset($_GET["divisi"])) {
-    header("location:index.php?false=1");
+    header("location:index.php?false=true");
 }
 
 ?>
