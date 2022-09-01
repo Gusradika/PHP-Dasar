@@ -3,6 +3,7 @@
 require "functions.php";
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,8 @@ img {
     width: 50px;
 }
 </style>
+
+
 
 <body>
 
@@ -54,3 +57,8 @@ img {
 </body>
 
 </html>
+
+<?php
+
+
+?>
