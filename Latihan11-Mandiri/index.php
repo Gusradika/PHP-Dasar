@@ -34,7 +34,7 @@ $mhs = query("SELECT * FROM mahasiswa");
         <?php foreach ($mhs as $x) : ?>
         <tr>
             <td><?= $x["id"] ?></td>
-            <td><a href="">ubah</a> <a href="hapus.php?id=<?= $x["id"] ?>">hapus</a>
+            <td><a href="ubah.php?id=<?= $x["id"] ?>">ubah</a> <a href="hapus.php?id=<?= $x["id"] ?>">hapus</a>
             <td><img style="width:50px" src="../resource/<?= $x["gambar"] ?>"></td>
             <td><?= $x["nama"] ?></td>
             <td><?= $x["nim"] ?></td>
