@@ -30,9 +30,9 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data</title>
     <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 
