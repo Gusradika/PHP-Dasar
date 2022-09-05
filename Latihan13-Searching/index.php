@@ -1,10 +1,15 @@
 <?php
 
 require("functions.php");
-
 $query = "SELECT * FROM mahasiswa";
 
 $data = query($query);
+
+if (isset($_POST['cari'])) {
+    $data = cari($_POST['keyword']);
+}
+
+
 
 ?>
 
@@ -21,6 +26,12 @@ $data = query($query);
 
 <body>
     <h1>Data Mahasiswa</h1>
+    <form action="" method="POST">
+        <input type="text" name="keyword" id="" placeholder="Pencarian..." size="30" autofocus>
+        <button type="submit" name="cari">cari</button>
+    </form>
+
+
     <a href="tambah.php">
         <h3>Tambah Data Mahasiswa</h3>
     </a>

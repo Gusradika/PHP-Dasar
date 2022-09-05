@@ -42,3 +42,11 @@ function hapus($id)
 
     return (mysqli_affected_rows($conn));
 }
+
+function cari($keyword)
+{
+    global $conn;
+    $query = "SELECT * FROM mahasiswa WHERE nama LIKE '%$keyword%'OR jurusan LIKE '%$keyword%';";
+
+    return (query($query));
+}
