@@ -1,0 +1,68 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: salmon;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: salmon;
+}
+
+.container {
+    padding: 50px;
+    height: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    
+}
+
+.boxcari {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    flex: 1;
+}
+
+.tabelbox {
+    width : 70%;
+    margin: 0 auto;
+    display: flex;
+}
+
+table {
+    justify-content: center;
+}
+
+.btn-tmbhdata{
+    line-height: 60px;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    background-color: salmon;
+    color: white;
+    transition: 0.2s;
+}
+
+.btn-tmbhdata h2 a {
+    color: white;
+}
+
+.btn-tmbhdata:hover{
+    background-color: yellowgreen;
+}
