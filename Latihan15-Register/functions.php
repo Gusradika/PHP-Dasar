@@ -1,46 +1,13 @@
 <?php
 
-<<<<<<< HEAD
-// 1 Connect
-// P4 parameter. 1.Host. 2.Username. 3.Password, 4.Table;
-$conn = mysqli_connect("localhost", "root", "", "latihan");
-=======
 // querying
 
 $conn = mysqli_connect("localhost", "root", "", "phpdasar");
->>>>>>> d40d18cc6015806e3a77d71c72d3557ee8e751c5
 
 function query($query)
 {
     global $conn;
     $rows = [];
-<<<<<<< HEAD
-    // 2 Query
-    $result = mysqli_query($conn, $query);
-    // 3 to Array Associative
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    };
-    return $rows;
-};
-
-
-function tambahdata($data)
-{
-
-    global $conn;
-    $nama = htmlspecialchars($data['nama']);
-    $email = htmlspecialchars($data['email']);
-    $jurusan = htmlspecialchars($data['jurusan']);
-    $gambar = htmlspecialchars($data['gambar']);
-    $alamat = htmlspecialchars($data['alamat']);
-    $query = "INSERT INTO mahasiswa VALUES ('','$nama','$email','$jurusan','$alamat','$gambar')";
-    mysqli_query($conn, $query);
-
-    return (mysqli_affected_rows($conn));
-}
-
-=======
 
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_assoc($result)) {
@@ -124,13 +91,10 @@ function upload()
 }
 
 
->>>>>>> d40d18cc6015806e3a77d71c72d3557ee8e751c5
 function hapus($id)
 {
     global $conn;
     $query = "DELETE FROM mahasiswa WHERE id = $id";
-<<<<<<< HEAD
-=======
     mysqli_query($conn, $query);
 
     return (mysqli_affected_rows($conn));
@@ -163,7 +127,6 @@ function ubah($data)
                 jurusan = '$jurusan',
                 gambar = '$gambar'
             WHERE id = $id";
->>>>>>> d40d18cc6015806e3a77d71c72d3557ee8e751c5
 
     mysqli_query($conn, $query);
 
@@ -176,8 +139,42 @@ function cari($keyword)
     $query = "SELECT * FROM mahasiswa WHERE nama LIKE '%$keyword%'OR jurusan LIKE '%$keyword%';";
 
     return (query($query));
-<<<<<<< HEAD
 }
-=======
+
+function register($data)
+{
+    // var_dump($data);
+    global $conn;
+
+
+    $username = strtolower(stripslashes($data['username']));
+    $password = mysqli_real_escape_string($conn, $data['password']);
+
+    $password2 = password_hash($password, PASSWORD_DEFAULT);
+    $query = "INSERT INTO userdatabase VALUES ('','$username','$password2')";
+    // cek user name sudah ada atau belum?
+    $result = mysqli_query($conn, "SELECT username FROM userdatabase WHERE username = '$username'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "
+            <script>
+                alert('Username sudah terdaftar');
+                document.location.href='index.php';
+            </script>
+        ";
+        return false;
+    }
+
+    // enkripsi password JANGAN PAKE MD5. Parameter 2 adalah metode enskripsi
+
+
+    echo "
+    <script>
+    console.log(<?= $password ?>);
+</script>
+";
+// tambahkan userbaru ke database
+
+mysqli_query($conn, $query);
+
+return (mysqli_affected_rows($conn));
 }
->>>>>>> d40d18cc6015806e3a77d71c72d3557ee8e751c5

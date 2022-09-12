@@ -1,10 +1,4 @@
 body {
-<<<<<<< HEAD
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    
-=======
     background-color: #eee;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -37,8 +31,6 @@ a {
 .boxcari {
     display: flex;
     justify-content: center;
-    border: 1px solid red;
-    background-color: red;
 }
 
 .container {
@@ -73,5 +65,4 @@ table {
 
 .btn-tmbhdata:hover{
     background-color: yellowgreen;
->>>>>>> d40d18cc6015806e3a77d71c72d3557ee8e751c5
 }

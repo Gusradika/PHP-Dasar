@@ -2,24 +2,28 @@
 require "functions.php";
 
 if (isset($_POST['submit'])) {
-    if (tambahdata($_POST) > 0) {
+
+    // var_dump($_POST);
+    // var_dump($_FILES);
+    // die;
+
+
+    if (tambah($_POST) > 0) {
         echo "
-            <script>
-                alert('Tambah Data Berhasil!');
-                document.location = 'index.php';
-            </script>
-        ";
+    <script>
+    alert('Data Added');
+    document.location.href='index.php';
+    </script>
+    ";
     } else {
         echo "
-            <script>
-                alert('Tambah Data Gagal!');
-                document.location = 'index.php';
-            </script>
-        ";
+    <script>
+    alert('Not Found');
+    document.location.href='index.php';
+    </script>;
+    ";
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +63,7 @@ if (isset($_POST['submit'])) {
         <!-- Button -->
         <br>
         <button type="submit" name="submit">Tambah</button>
+
     </form>
 </body>
 
