@@ -22,9 +22,35 @@ function query()
     return (mysqli_affected_rows($conn));
 }
 
+function query2()
+{
+    global $namatable;
+    //5 data berbeda
+    $nama = ["Ricky Aselole", "Dr.Aji", "Boyke Ashiap", "Dar der dor", "Kurang Kreatif"];
+    $nim = ["214101", "20001", "20002", "20003", "20004"];
+    $email = ["ricky@gmail.com", "aji@gmail.com", "boyke@gmail.com", "dar@gmail.com", "kurang@gmail.com"];
+    $jurusan = ["S1 Sistem Informasi", "S1 Sistem Informasi", "S1 Sistem Informasi", "S1 Sistem Informasi", "S1 Sistem Informasi"];
+    $gambar = "puzzle.png";
+
+    $conn = mysqli_connect('localhost', 'root', '', $namatable);
+
+    for ($i = 0; $i < 5; $i++) {
+        $query = "INSERT INTO mahasiswa VALUES('','$nama[$i]','$nim[$i]','$email[$i]','$jurusan[$i]','$gambar')";
+        mysqli_query($conn, $query);
+    }
+    return (mysqli_affected_rows($conn));
+}
+
 if (isset($_POST['submit'])) {
     $namatable = $_POST['tablename'];
     if ($num = query() > 0) {
+        $print = true;
+    }
+}
+
+if (isset($_POST['submit2'])) {
+    $namatable = $_POST['tablename'];
+    if ($num = query2() > 0) {
         $print = true;
     }
 }
@@ -67,7 +93,10 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="tablename" id="name" placeholder="Table name">
             </li>
             <li>
-                <button type="submit" name="submit">tambah data</button>
+                <button type="submit" name="submit">Tambah data 1</button>
+            </li>
+            <li>
+                <button type="submit" name="submit2">Tambah data 2</button>
             </li>
         </ul>
     </form>
